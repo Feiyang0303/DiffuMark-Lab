@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Append one line to logs/daily.md (gitignored). Optional probabilistic commits.
+# Append one line to logs/daily.md. Optional probabilistic commits.
 #
 # Usage:
 #   ./scripts/daily_log.sh ["optional note"]
@@ -22,7 +22,7 @@ mkdir -p "$LOG_DIR"
 if [[ ! -f "$LOG" ]]; then
   echo "# Daily log" > "$LOG"
   echo "" >> "$LOG"
-  echo "Local-only log (gitignored). Use \`./scripts/daily_log.sh\` to append a line." >> "$LOG"
+  echo "Run \`./scripts/daily_log.sh\` with an optional message; the GitHub Action may also append via --maybe-commit." >> "$LOG"
   echo "" >> "$LOG"
 fi
 

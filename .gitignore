@@ -38,9 +38,6 @@ outputs_watermark_dm/
 *.swp
 *~
 
-# Local logs (heartbeat / daily_log); not tracked
-logs/
-
 # Jupyter
 .ipynb_checkpoints/
 

@@ -1,0 +1,55 @@
+# Probabilistic daily commits (some days skip, some days 1–4 commits).
+# For contribution-graph credit, set repo secret HEARTBEAT_GIT_EMAIL to a
+# verified GitHub email. See logs/README.md
+
+name: Daily heartbeat
+
+on:
+  schedule:
+    - cron: "15 5 * * *" # 05:15 UTC daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-heartbeat
+  cancel-in-progress: true
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git identity
+        env:
+          AUTHOR_EMAIL: ${{ secrets.HEARTBEAT_GIT_EMAIL }}
+        run: |
+          set -e
+          if [ -n "$AUTHOR_EMAIL" ]; then
+            git config user.name "${{ github.actor }}"
+            git config user.email "$AUTHOR_EMAIL"
+          else
+            echo "::warning title=Contribution graph::Set repository secret HEARTBEAT_GIT_EMAIL to a verified GitHub email, or this commit may not appear on your personal contribution graph."
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+          fi
+
+      - name: Maybe commit (random skip / light / green day)
+        env:
+          # ~48% skip, else 1–4 commits with random times today
+          DAILY_LOG_MAYBE_SKIP_P: "0.48"
+        run: |
+          set -e
+          chmod +x scripts/daily_log.sh
+          BEFORE=$(git rev-parse HEAD)
+          ./scripts/daily_log.sh --maybe-commit
+          AFTER=$(git rev-parse HEAD)
+          if [ "$BEFORE" = "$AFTER" ]; then
+            echo "Random skip — no commit today."
+            exit 0
+          fi
+          git push
