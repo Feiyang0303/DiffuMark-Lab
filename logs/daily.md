@@ -103,3 +103,4 @@ Local-only log (gitignored). Use `./scripts/daily_log.sh` to append a line.
 - **2026-06-11** 18:05 · `549c297` main — 549c297 Daily log: optional random-dated commits; document in logs README; heartbeat_local clarity; add Winter2026 report PDF build script.
 - **2026-06-11** 11:55 · `549c297` main — 549c297 Daily log: optional random-dated commits; document in logs README; heartbeat_local clarity; add Winter2026 report PDF build script.
 - **2026-06-11** 16:47 · `549c297` main — 549c297 Daily log: optional random-dated commits; document in logs README; heartbeat_local clarity; add Winter2026 report PDF build script.
+- **2026-07-19** 12:33 · `817f0c3` main — 817f0c3 Restore daily heartbeat with random skip/busy days.
