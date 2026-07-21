@@ -106,3 +106,4 @@ Local-only log (gitignored). Use `./scripts/daily_log.sh` to append a line.
 - **2026-07-19** 12:33 · `817f0c3` main — 817f0c3 Restore daily heartbeat with random skip/busy days.
 - **2026-07-20** 20:29 · `5025ccf` main — 5025ccf chore: checkpoint
 - **2026-07-20** 11:03 · `5025ccf` main — 5025ccf chore: checkpoint
+- **2026-07-21** 19:02 · `d5f8756` main — d5f8756 chore: sync notes
