@@ -107,3 +107,4 @@ Local-only log (gitignored). Use `./scripts/daily_log.sh` to append a line.
 - **2026-07-20** 20:29 · `5025ccf` main — 5025ccf chore: checkpoint
 - **2026-07-20** 11:03 · `5025ccf` main — 5025ccf chore: checkpoint
 - **2026-07-21** 19:02 · `d5f8756` main — d5f8756 chore: sync notes
+- **2026-07-24** 19:30 · `c3455cd` main — c3455cd chore: notes
