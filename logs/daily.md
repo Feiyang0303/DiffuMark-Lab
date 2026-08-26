@@ -128,3 +128,4 @@ Local-only log (gitignored). Use `./scripts/daily_log.sh` to append a line.
 - **2026-08-19** 16:15 · `10e6b8b` main — 10e6b8b chore: daily log
 - **2026-08-22** 15:09 · `0857c97` main — 0857c97 chore: checkpoint
 - **2026-08-23** 11:37 · `3825849` main — 3825849 chore: sync notes
+- **2026-08-26** 15:59 · `5113d91` main — 5113d91 chore: sync notes
